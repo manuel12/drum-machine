@@ -1,23 +1,189 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+
+import "./App.css";
 
 function App() {
+  const [currentSoundName, setCurrentSoundName] = useState("");
+
+  useEffect(() => {
+    function onKeyDown(e) {
+      const upperCaseKey = e.key.toUpperCase();
+      playSound(null, document.getElementById(upperCaseKey));
+    }
+
+    document.addEventListener("keydown", onKeyDown);
+  }, []);
+
+  const getSoundName = (soundElement) => {
+    const soundUrl = soundElement.src;
+    const soundFileName = soundUrl.split("/")[5];
+    let soundName = soundFileName.split(".")[0];
+
+    console.log(soundName);
+    switch (soundName) {
+      case "Heater-1":
+        return "Header 1";
+      case "Heater-2":
+        return "Header 2";
+      case "Heater-3":
+        return "Header 3";
+      case "Heater-4":
+        return "Header 4";
+      case "Heater-6":
+        return "Header 6";
+      case "Dsc_Oh":
+        return "Clap";
+      case "Kick_n_Hat":
+        return "Kick n' Hat";
+      case "RP4_KICK_1":
+        return "Kick";
+      case "Cev_H2":
+        return "Closed HH";
+    }
+  };
+
+  const playSound = (e, sound = null) => {
+    if (sound) {
+      const soundName = getSoundName(sound);
+      setCurrentSoundName(soundName);
+      sound=sound.cloneNode();
+      return sound.play();
+    }
+
+    const soundName = getSoundName(e.target.children[0]);
+    setCurrentSoundName(soundName);
+    sound = e.target.children[0];
+    sound=sound.cloneNode();
+    sound.play()
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Drum Machine</h1>
+      <div className="container">
+        <div id="drum-machine" className="bg-light">
+          <div className="row">
+            <div className="pad-buttons-container col-md-8">
+              <div className="row">
+                {/* <div
+                  className="drum-pad col-md"
+                  id="Heater 1"
+                  onClick={playSound}
+                >
+                  <audio
+                    id="Q"
+                    className="clip"
+                    src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
+                  ></audio>
+                  Q
+                </div> */}
+                <div
+                  className="drum-pad col-md"
+                  id="Heater 2"
+                  onClick={playSound}
+                >
+                  <audio
+                    id="W"
+                    className="clip"
+                    src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"
+                  ></audio>
+                  W
+                </div>
+                <div
+                  className="drum-pad col-md"
+                  id="Heater 3"
+                  onClick={playSound}
+                >
+                  <audio
+                    id="E"
+                    className="clip"
+                    src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"
+                  ></audio>
+                  E
+                </div>
+              </div>
+
+              <div className="row">
+                <div
+                  className="drum-pad col-md"
+                  id="Heater 4"
+                  onClick={playSound}
+                >
+                  <audio
+                    id="A"
+                    className="clip"
+                    src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"
+                  ></audio>
+                  A
+                </div>
+                <div className="drum-pad col-md" id="Clap" onClick={playSound}>
+                  <audio
+                    id="S"
+                    className="clip"
+                    src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"
+                  ></audio>
+                  S
+                </div>
+                <div
+                  className="drum-pad col-md"
+                  id="Open-HH"
+                  onClick={playSound}
+                >
+                  <audio
+                    id="D"
+                    className="clip"
+                    src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"
+                  ></audio>
+                  D
+                </div>
+              </div>
+
+              <div className="row">
+                <div
+                  className="drum-pad col-md"
+                  id="Kick-n'-Hat"
+                  onClick={playSound}
+                >
+                  <audio
+                    id="Z"
+                    className="clip"
+                    src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"
+                  ></audio>
+                  Z
+                </div>
+                <div className="drum-pad col-md" id="Kick" onClick={playSound}>
+                  <audio
+                    id="X"
+                    className="clip"
+                    src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"
+                  ></audio>
+                  X
+                </div>
+                <div
+                  className="drum-pad col-md"
+                  id="Closed-HH"
+                  onClick={playSound}
+                >
+                  <audio
+                    id="C"
+                    className="clip"
+                    src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"
+                  ></audio>
+                  C
+                </div>
+              </div>
+            </div>
+            <div id="display" className="display-container col-md-4">
+              <div className="h3 bg-dark text-light rounded-1">
+                Current Sample:
+              </div>
+              <div className="h5 bg-secondary  text-light rounded-1">
+                {currentSoundName}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
