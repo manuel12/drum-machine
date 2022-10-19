@@ -46,15 +46,15 @@ function App() {
     if (sound) {
       const soundName = getSoundName(sound);
       setCurrentSoundName(soundName);
-      sound=sound.cloneNode();
+      sound = sound.cloneNode();
       return sound.play();
     }
 
     const soundName = getSoundName(e.target.children[0]);
     setCurrentSoundName(soundName);
     sound = e.target.children[0];
-    sound=sound.cloneNode();
-    sound.play()
+    sound = sound.cloneNode();
+    sound.play();
   };
 
   return (
@@ -65,7 +65,7 @@ function App() {
           <div className="row">
             <div className="pad-buttons-container col-md-8">
               <div className="row">
-                {/* <div
+                <div
                   className="drum-pad col-md"
                   id="Heater 1"
                   onClick={playSound}
@@ -76,7 +76,7 @@ function App() {
                     src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
                   ></audio>
                   Q
-                </div> */}
+                </div>
                 <div
                   className="drum-pad col-md"
                   id="Heater 2"
