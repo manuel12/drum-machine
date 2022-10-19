@@ -3,15 +3,16 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
+  const SOUND_VOLUME = 0.2;
   const [currentSoundName, setCurrentSoundName] = useState("");
 
   useEffect(() => {
-    function onKeyDown(e) {
+    function onKeyUp(e) {
       const upperCaseKey = e.key.toUpperCase();
-      playSound(null, document.getElementById(upperCaseKey));
+      const sound = document.getElementById(upperCaseKey);
+      playSound(null, sound);
     }
-
-    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("keyup", onKeyUp);
   }, []);
 
   const getSoundName = (soundElement) => {
@@ -19,7 +20,6 @@ function App() {
     const soundFileName = soundUrl.split("/")[5];
     let soundName = soundFileName.split(".")[0];
 
-    console.log(soundName);
     switch (soundName) {
       case "Heater-1":
         return "Header 1";
@@ -46,15 +46,22 @@ function App() {
     if (sound) {
       const soundName = getSoundName(sound);
       setCurrentSoundName(soundName);
-      sound = sound.cloneNode();
+
+      sound.volume = SOUND_VOLUME;
+      sound.pause();
+      sound.currentTime = 0;
+      return sound.play();
+    } else {
+      const soundElement = e.target.children[0];
+      const soundName = getSoundName(soundElement);
+      setCurrentSoundName(soundName);
+
+      const sound = soundElement;
+      sound.volume = SOUND_VOLUME;
+      sound.pause();
+      sound.currentTime = 0;
       return sound.play();
     }
-
-    const soundName = getSoundName(e.target.children[0]);
-    setCurrentSoundName(soundName);
-    sound = e.target.children[0];
-    sound = sound.cloneNode();
-    sound.play();
   };
 
   return (
