@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import DrumPad from "./components/DrumPad";
 
 import "./App.css";
 
@@ -70,7 +71,8 @@ function App() {
       <div className="container">
         <div id="drum-machine" className="bg-light">
           <div className="row">
-            <div className="pad-buttons-container col-md-8">
+            <DrumPad playSound={playSound} />
+            {/* <div className="pad-buttons-container col-md-8">
               <div className="row">
                 <div
                   className="drum-pad col-md"
@@ -179,7 +181,7 @@ function App() {
                   C
                 </div>
               </div>
-            </div>
+            </div> */}
             <div id="display" className="display-container col-md-4">
               <div className="h3 bg-dark text-light rounded-1">
                 Current Sample:
