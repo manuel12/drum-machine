@@ -1,6 +1,24 @@
+import {useState} from "react";
+
+import React from "react";
 import DrumPadButton from "./DrumPadButton";
 
 const DrumPad = (props) => {
+  const [qKeyPressed, setQKeyPressed] = useState(false);
+  const [wKeyPressed, setWKeyPressed] = useState(false);
+  const [eKeyPressed, setEKeyPressed] = useState(false);
+
+  const [aKeyPressed, setAKeyPressed] = useState(false);
+  const [sKeyPressed, setSKeyPressed] = useState(false);
+  const [dKeyPressed, setDKeyPressed] = useState(false);
+
+  const [zKeyPressed, setZKeyPressed] = useState(false);
+  const [xKeyPressed, setXKeyPressed] = useState(false);
+  const [cKeyPressed, setCKeyPressed] = useState(false);
+
+
+
+
   return (
     <div className="pad-buttons-container col-md-8">
       <div className="row">
