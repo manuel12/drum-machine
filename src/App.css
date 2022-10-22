@@ -34,7 +34,7 @@ h1 {
   background-color: rgb(200, 130, 0);
 }
 
-.drum-pad:active {
+.drum-pad-active, .drum-pad:active {
   background-color: rgb(154, 100, 0);
   box-shadow: 0 2px #999;
   transform: translateY(3px);
