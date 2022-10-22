@@ -7,20 +7,44 @@ function App() {
   const SOUND_VOLUME = 0.2;
   const [currentSoundName, setCurrentSoundName] = useState("");
 
+  const [qKeyPressed, setQKeyPressed] = useState(false);
+  const [wKeyPressed, setWKeyPressed] = useState(false);
+  const [eKeyPressed, setEKeyPressed] = useState(false);
+
+  const [aKeyPressed, setAKeyPressed] = useState(false);
+  const [sKeyPressed, setSKeyPressed] = useState(false);
+  const [dKeyPressed, setDKeyPressed] = useState(false);
+
+  const [zKeyPressed, setZKeyPressed] = useState(false);
+  const [xKeyPressed, setXKeyPressed] = useState(false);
+  const [cKeyPressed, setCKeyPressed] = useState(false);
+
+  const keyFunctionDict = {
+    Q: setQKeyPressed,
+    W: setWKeyPressed,
+    E: setEKeyPressed,
+
+    A: setAKeyPressed,
+    S: setSKeyPressed,
+    D: setDKeyPressed,
+
+    Z: setZKeyPressed,
+    X: setXKeyPressed,
+    C: setCKeyPressed,
+  };
+
   useEffect(() => {
     function onKeyUp(e) {
       const upperCaseKey = e.key.toUpperCase();
-      console.log(`Released key: ${upperCaseKey}`);
+      keyFunctionDict[upperCaseKey](false);
 
       const sound = document.getElementById(upperCaseKey);
       playSound(null, sound);
     }
+
     function onKeyDown(e) {
       const upperCaseKey = e.key.toUpperCase();
-      console.log(`Pressed key: ${upperCaseKey}`);
-
-      const drumPadButton = document.getElementById(upperCaseKey).parentNode;
-      console.log(drumPadButton)
+      keyFunctionDict[upperCaseKey](true);
     }
     document.addEventListener("keyup", onKeyUp);
     document.addEventListener("keydown", onKeyDown);
@@ -81,7 +105,18 @@ function App() {
       <div className="container">
         <div id="drum-machine" className="bg-light">
           <div className="row">
-            <DrumPad playSound={playSound} />
+            <DrumPad
+              playSound={playSound}
+              qKeyPressed={qKeyPressed}
+              wKeyPressed={wKeyPressed}
+              eKeyPressed={eKeyPressed}
+              aKeyPressed={aKeyPressed}
+              sKeyPressed={sKeyPressed}
+              dKeyPressed={dKeyPressed}
+              zKeyPressed={zKeyPressed}
+              xKeyPressed={xKeyPressed}
+              cKeyPressed={cKeyPressed}
+            />
             <div id="display" className="display-container col-md-4">
               <div className="h3 bg-dark text-light rounded-1">
                 Current Sample:
