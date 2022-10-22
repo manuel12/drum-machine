@@ -1,7 +1,9 @@
 const DrumPadButton = (props) => {
   return (
     <div
-      className={`drum-pad ${props.keyPressed && "drum-pad-active"}  col-md `}
+      className={`drum-pad-button ${
+        props.keyPressed && "drum-pad-button-active"
+      }  col-md`}
       id={props.sampleName}
       onClick={props.playSound}
     >
