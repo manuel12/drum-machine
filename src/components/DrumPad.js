@@ -16,7 +16,7 @@ const DrumPad = (props) => {
           buttonLetter="W"
           sampleUrl="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"
           playSound={props.playSound}
-          keyPressed={props.wwwKeyPressed}
+          keyPressed={props.wKeyPressed}
         />
         <DrumPadButton
           sampleName="Heater 3"
