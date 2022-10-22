@@ -1,7 +1,11 @@
+import { useState } from "react";
+
 const DrumPadButton = (props) => {
+  const [isActive, setIsActive] = useState(false);
+
   return (
     <div
-      className="drum-pad col-md"
+      className={`drum-pad ${isActive && "drum-pad-active"}  col-md `}
       id={props.sampleName}
       onClick={props.playSound}
     >
