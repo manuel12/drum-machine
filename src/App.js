@@ -10,10 +10,20 @@ function App() {
   useEffect(() => {
     function onKeyUp(e) {
       const upperCaseKey = e.key.toUpperCase();
+      console.log(`Released key: ${upperCaseKey}`);
+
       const sound = document.getElementById(upperCaseKey);
       playSound(null, sound);
     }
+    function onKeyDown(e) {
+      const upperCaseKey = e.key.toUpperCase();
+      console.log(`Pressed key: ${upperCaseKey}`);
+
+      const drumPadButton = document.getElementById(upperCaseKey).parentNode;
+      console.log(drumPadButton)
+    }
     document.addEventListener("keyup", onKeyUp);
+    document.addEventListener("keydown", onKeyDown);
   }, []);
 
   const getSoundName = (soundElement) => {
