@@ -1,6 +1,3 @@
-import { useState } from "react";
-
-import React from "react";
 import DrumPadButton from "./DrumPadButton";
 
 const DrumPad = (props) => {
