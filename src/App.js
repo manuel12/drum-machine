@@ -101,9 +101,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Drum Machine</h1>
+      <h1 className="bordered-heading">Drum Machine</h1>
       <div className="container">
-        <div id="drum-machine" className="bg-light">
+        <div id="drum-machine" className="bg-light rounded-4">
           <div className="row">
             <DrumPad
               playSound={playSound}
@@ -118,10 +118,10 @@ function App() {
               cKeyPressed={cKeyPressed}
             />
             <div id="display" className="display-container col-md-4">
-              <div className="h3 bg-dark text-light rounded-1">
+              <div className="h3 bg-dark text-light rounded-5 current-sample-heading">
                 Current Sample:
               </div>
-              <div className="h5 bg-secondary  text-light rounded-1">
+              <div className="h5 bg-secondary  text-light rounded-5 current-sample-name">
                 {currentSoundName}
               </div>
             </div>
