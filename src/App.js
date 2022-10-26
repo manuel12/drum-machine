@@ -106,7 +106,7 @@ function App() {
       </div>
 
       <div className="container">
-        <div id="drum-machine" className="bg-light rounded-4">
+        <div id="drum-machine" className="bg-light container-styles">
           <div className="row">
             <DrumPad
               playSound={playSound}
@@ -121,10 +121,10 @@ function App() {
               cKeyPressed={cKeyPressed}
             />
             <div id="display" className="display-container col-md-4">
-              <div className="h3 text-light rounded-5 current-sample-heading">
+              <div className="h3 text-light current-sample-heading heading-styles">
                 Current Sample:
               </div>
-              <div className="h5 text-light rounded-5 current-sample-name">
+              <div className="h5 text-light current-sample-name heading-styles">
                 {currentSoundName}
               </div>
             </div>
