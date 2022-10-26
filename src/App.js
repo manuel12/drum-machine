@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
   const SOUND_VOLUME = 0.2;
-  const [currentSoundName, setCurrentSoundName] = useState("");
+  const [currentSoundName, setCurrentSoundName] = useState("...");
 
   const [qKeyPressed, setQKeyPressed] = useState(false);
   const [wKeyPressed, setWKeyPressed] = useState(false);
@@ -101,7 +101,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="bordered-heading">Drum Machine</h1>
+      <div className="heading">
+        <h1>Drum Machine</h1>
+      </div>
+
       <div className="container">
         <div id="drum-machine" className="bg-light rounded-4">
           <div className="row">
@@ -118,10 +121,10 @@ function App() {
               cKeyPressed={cKeyPressed}
             />
             <div id="display" className="display-container col-md-4">
-              <div className="h3 bg-dark text-light rounded-5 current-sample-heading">
+              <div className="h3 text-light rounded-5 current-sample-heading">
                 Current Sample:
               </div>
-              <div className="h5 bg-secondary  text-light rounded-5 current-sample-name">
+              <div className="h5 text-light rounded-5 current-sample-name">
                 {currentSoundName}
               </div>
             </div>
