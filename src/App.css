@@ -2,12 +2,16 @@
   font-family: "Varela Round", sans-serif;
 }
 
-h1 {
-  color: white;
+.heading {
+  width: 50%;
+  margin: auto;
+  background-color: #1cb0f6;
+  border: 5px solid #189fdd;
+  border-radius: 50px;
 }
 
-.bordered-heading {
-  border-radius: 15px;
+h1 {
+  color: white;
 }
 
 .App {
@@ -46,8 +50,13 @@ h1 {
   transform: translateY(3px);
 }
 
-.current-sample-heading,
+.current-sample-heading {
+  background-color: #58cc02;
+  box-shadow: 0 5px #999;
+  padding: 1px;
+}
 .current-sample-name {
+  background-color: #1cb0f6;
   box-shadow: 0 5px #999;
   padding: 1px;
 }
