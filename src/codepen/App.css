@@ -1,77 +1,188 @@
 * {
   font-family: "Varela Round", sans-serif;
+  color: white;
+}
+
+:root {
+  font-size: 1.2rem;
+}
+
+body {
   user-select: none;
+  padding: 50px 0;
+}
+
+.heading-depth {
+  background-color: #ffbc00;
+  text-align: center;
+
+  padding: 3px;
+  border: 3px solid darkgray;
+  border-radius: 10px;
+  box-shadow: 0 5px #999;
+}
+
+.heading-round {
+  text-align: center;
+  margin: 10px auto;
+  padding: 3px;
+  border: 3px solid;
+  border-radius: 50px;
+}
+
+.custom-container {
+  margin: 20px auto;
+  padding: 10px;
+  width: 50%;
+
+  border: 4px solid darkgray;
+  border-radius: 15px;
+  box-shadow: 0 10px rgb(120, 120, 120);
+}
+
+.label {
+  display: block;
+  margin: 5px 0;
+}
+
+.input {
+  display: block;
+  width: 95%;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  padding: 10px 2.5%;
+  margin: 10px 0;
+  font-size: 0.8rem;
+}
+
+.input:focus {
+  outline: 2px solid orange;
+}
+
+.select {
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.textarea {
+  width: 100;
+  height: 100px;
+  font-family: inherit;
+  resize: none;
+}
+
+textarea::-webkit-scrollbar {
+  width: 10px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background-color: lightgray;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: #4e4e4e;
+  border-radius: 25px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.button {
+  text-align: center;
+  font-weight: bold;
+  margin: 10px auto;
+  max-width: 50%;
+
+  border: 2px solid rgb(120, 120, 120);
+  border-radius: 50px;
+  box-shadow: 0 7px rgb(120, 120, 120);
+  cursor: pointer;
+}
+
+.button:active {
+  box-shadow: 0 1px rgb(120, 120, 120);
+  transform: translateY(6px);
+}
+
+.submit-button {
+  margin: 10px auto;
+  padding: 10px;
+  display: block;
+  width: 25%;
+  color: white;
+  font-size: inherit;
+}
+
+.bg-red {
+  background-color: #ff0000;
+}
+
+.bg-orange {
+  background-color: #ff9600;
+}
+
+.bg-yellow {
+  background-color: #ffbc00;
+}
+
+.bg-green {
+  background-color: #58CC02;
+}
+
+.bg-blue {
+  background-color: #1cb0f6;
+}
+
+.bg-purple {
+  background-color: #5c6cfc;
+}
+
+.bg-grey {
+  background-color: lightgray
+}
+
+
+.border-dark-green {
+  border-color: #49a403;
+}
+
+.border-dark-blue {
+  border-color: #1586ba;
+}
+
+
+:root {
+  font-size: 1rem;
+}
+
+body {
+  background-color: #74c0fc;
 }
 
 .heading {
   position: relative;
   top: 50px;
   width: 50%;
-  margin: auto;
-  background-color: #1cb0f6;
-  border: 5px solid #189fdd;
-  border-radius: 50px;
 }
 
 h1 {
-  color: white;
-}
-
-.App {
-  text-align: center;
+  position: relative;
+  top: 5px;
 }
 
 #drum-machine {
   height: fit-content;
   width: 50%;
-  margin: 200px auto;
+  margin: 160px auto;
+  padding: 10px 20px;
 }
 
 .drum-pad-button {
   background-color: #ffa705;
-  color: white;
   padding: 10px;
   margin: 10px 3px;
   font-size: 1.8rem;
-}
-
-.drum-pad-button:hover {
-  background-color: rgb(200, 130, 0);
-}
-
-.drum-pad-button-active,
-.drum-pad-button:active {
-  background-color: rgb(154, 100, 0);
-  box-shadow: 0 3px #999;
-  transform: translateY(3px);
-}
-
-.current-sample-heading {
-  background-color: #58cc02;
-  border-color: #49a403;
-}
-.current-sample-name {
-  background-color: #1cb0f6;
-  border-color: #1586ba;
-}
-
-.heading-styles {
-  border-width: 3px;
-  border-style: solid;
-  border-radius: 50px;
-  padding: 3px;
-}
-
-.container-styles {
-  padding: 10px 20px;
-  border: 4px solid darkgray;
-  border-radius: 15px;
-  box-shadow: 0 10px #999;
-}
-
-.button-styles {
-  border: 2px solid #999;
-  border-radius: 50px;
-  box-shadow: 0 7px #999;
-  cursor: pointer;
 }
