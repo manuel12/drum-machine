@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import DrumPad from "./components/DrumPad";
 
+
+import "./custom-styles.css";
+import "./custom-colors.css";
 import "./App.css";
 
 function App() {
@@ -101,12 +104,12 @@ function App() {
 
   return (
     <div className="App">
-      <div className="heading">
+      <div className="heading heading-round bg-blue border-dark-blue">
         <h1>Drum Machine</h1>
       </div>
 
       <div className="container">
-        <div id="drum-machine" className="bg-light container-styles">
+        <div id="drum-machine" className="bg-grey custom-container">
           <div className="row">
             <DrumPad
               playSound={playSound}
@@ -120,11 +123,11 @@ function App() {
               xKeyPressed={xKeyPressed}
               cKeyPressed={cKeyPressed}
             />
-            <div id="display" className="display-container col-md-4">
-              <div className="h3 text-light current-sample-heading heading-styles">
+            <div id="display" className=" col-md-4">
+              <div className="h3 text-light heading-round bg-green border-dark-green">
                 Current Sample:
               </div>
-              <div className="h5 text-light current-sample-name heading-styles">
+              <div className="h5 text-light heading-round bg-blue border-dark-blue">
                 {currentSoundName}
               </div>
             </div>
