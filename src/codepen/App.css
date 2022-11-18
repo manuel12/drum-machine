@@ -129,7 +129,7 @@ input[type="checkbox"] {
 }
 
 .bg-green {
-  background-color: #58CC02;
+  background-color: #58cc02;
 }
 
 .bg-blue {
@@ -141,9 +141,8 @@ input[type="checkbox"] {
 }
 
 .bg-grey {
-  background-color: lightgray
+  background-color: lightgray;
 }
-
 
 .border-dark-green {
   border-color: #49a403;
@@ -152,7 +151,6 @@ input[type="checkbox"] {
 .border-dark-blue {
   border-color: #1586ba;
 }
-
 
 :root {
   font-size: 1rem;
@@ -185,4 +183,9 @@ h1 {
   padding: 10px;
   margin: 10px 3px;
   font-size: 1.8rem;
+}
+
+.drum-pad-button-pressed {
+  box-shadow: 0 1px rgb(120, 120, 120);
+  transform: translateY(6px);
 }
