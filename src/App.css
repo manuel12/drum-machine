@@ -30,3 +30,8 @@ h1 {
   margin: 10px 3px;
   font-size: 1.8rem;
 }
+
+.drum-pad-button-pressed {
+  box-shadow: 0 1px rgb(120, 120, 120);
+  transform: translateY(6px);
+}
